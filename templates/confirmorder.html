@@ -1,0 +1,57 @@
+{% extends 'no_sidebar_base.html' %}
+{% load static %}
+
+{% block 'main' %}
+
+
+<div class="box col-5">
+
+{% for msg in messages %}
+<div>
+  {% if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+  <div class="alert alert-warning" role="alert">
+    {{msg}}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
+
+    <u><h3 class="bg-light rounded-3">Products:</h3></u>
+    {% for cart in cartlist %}
+    <div class="row m-2" >
+       <div class="col-3">
+          <img src="{{ cart.clothid.imagepath.url }}" alt="" width="100px" height="100px">
+       </div>
+       <div class="col-5">
+          <h4>{{ cart.clothid.name }}</h4>
+          
+          <strong>Rs.{{ cart.clothid.price }}</strong><br>
+          Quantity: 
+          <strong>{{ cart.quantity }}</strong>
+       </div>
+       
+    </div>
+    {% endfor %}
+ </div>
+ <div class="box col-4">
+    <u><h3 class=" bg-light rounded-3" >Customer Info.:</h3></u>
+       <h5>Name: {{ user.first_name }} {{ user.last_name }}</h5>
+       <h5>Email: {{ user.email }}</h5>
+       <h5>Mobile: {{ profile.mobile }}</h5>
+       <h5>Address: {{ profile.address }}</h5>
+       <br>
+
+       <u><h3 class=" bg-light rounded-3" >Billing Summary:</h3></u>
+       <h5 style="color: grey;">Items Count: {{count}}</h5>
+       <h5 style="color: grey;">Sub-Total Amount: Rs. {{total}}</h5>
+       <em style="color: grey;">GST: 18% included</em>
+       <h5 style="color: grey;">Delivery: {{ delivery }}</h5>
+       <hr>
+       <h5 style="color:red">Total Amount: Rs. {{ final }}</h5>
+
+       <br>
+       <a class="btn btn-warning" href="/makepayment">Make Payment</a>
+       <a class="btn btn-primary" href="/mycart">Back to Cart</a>
+ </div>
+
+{% endblock 'main' %}

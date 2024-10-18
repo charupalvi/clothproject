@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'main' %}
+
+<form class="f1 shadow p-3 mb-5 bg-body rounded" action="" method="post">
+  {% csrf_token %}
+    <h2>Registration</h2>
+    {% if error %}
+    <div class="alert alert-danger">
+      {{ error }}   
+    </div>
+    {% endif %}
+
+
+    <div class="di1 mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username:</label> 
+      <input type="text" class="form-control" id="basic-addon1" aria-describedby="addon-wrapping" placeholder="Enter Username" name="username" >
+    </div>
+    <div class="di1 mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email Id:</label> 
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter a valid email address" name="email">
+      </div>
+      <div class="di1 mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+      </div>
+    <div class="di1 mb-3">
+      <label for="exampleInputPassword1" class="form-label">Confirm Password:</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="confirmpassword">
+    </div>
+    <div class="di1">
+        <button type="submit" class="btn btn-primary">Register</button>
+    </div><br>
+    <div class="di1">
+        Already User?<a href="login.html" class="a2">Login</a>
+    </div>
+  </form>
+
+{% endblock 'main' %}

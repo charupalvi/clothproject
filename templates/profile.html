@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'main' %}
+
+<form class="f1 shadow p-3 mb-5 bg-body rounded" action="" method="post">
+  {% csrf_token %}
+    <h2>Edit Profile</h2>
+    <!-- {% if error %}
+    <div class="alert alert-danger">
+      {{ error }}   
+    </div>
+    {% endif %} -->
+
+
+    <div class="di1 mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username:</label> 
+      <input type="text" class="form-control" id="basic-addon1" aria-describedby="addon-wrapping" placeholder="Enter Username" name="username" readonly value="{{user.username}}">
+    </div>
+    <div class="di1 mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email Id:</label> 
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter a valid email address" name="email" readonly value="{{user.email}}">
+      </div>
+      <div class="di1 mb-3">
+        <label for="exampleInputEmail1" class="form-label">First Name:</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="firstname">
+      </div>
+    <div class="di1 mb-3">
+      <label for="exampleInputEmail1" class="form-label">Last Name:</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="lastname">
+    </div>
+    <div class="di1 mb-3">
+        <label for="exampleInputEmail1" class="form-label">Mobile:</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="mobile">
+      </div>
+      <div class="di1 mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Address:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="address"></textarea>
+      </div>
+    <div class="di1">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div><br>
+    <!-- <div class="di1">
+        Already User?<a href="login.html" class="a2">Login</a>
+    </div> -->
+  </form>
+
+{% endblock 'main' %}

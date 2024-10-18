@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'main' %}
+
+
+<center>
+<form class="shadow p-3 mb-5 bg-body rounded col-md-8" method="post">
+  {% csrf_token %}
+
+  {% for msg in messages %}
+<div>
+  {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+     <div class="alert alert-success" role="alert">
+       {{msg}}
+     </div>
+  {% elif msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+     <div class="alert alert-danger" role="alert">
+       {{msg}}
+     </div>
+  {% endif %}
+</div>
+{% endfor %}
+
+
+    <h2>Login</h2>
+    {% if success %}
+    <div class="alert alert-success">
+      {{ success }}   
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <div class="alert alert-danger">
+      {{ error }}   
+    </div>
+    {% endif %}
+    
+    <div class="di1 mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username:</label> 
+      <input type="text" class="form-control" id="basic-addon1" aria-describedby="addon-wrapping" placeholder="Enter Username" name="username">
+    </div>
+    <div class="di1 mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password:</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    </div>
+    <div class="di1">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div><br>
+    <div class="di1">
+        Not a User?<a href="register.html" class="a2">Register</a>
+    </div>
+  </form>
+</center>
+{% endblock 'main' %}

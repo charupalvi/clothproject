@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block 'main' %}
+
+  <!-- {% for msg in messages %}
+     {% if msg.level == DEFUALT_MESSAGE_SUCCESS %}
+    <div class="alert alert-success" role="alert">
+      {{msg}}
+    </div>
+    {% endif %}
+   
+  {% endfor %} -->
+    {% for msg in messages %}
+<div>
+  {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+  <div class="alert alert-success" role="alert">
+    {{msg}}
+  </div>
+ 
+  {% else %}
+  <div class="alert alert-warning" role="alert">
+    {{msg}}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
+<!-- product 1 -->
+ {% for cloth in cloths %}
+
+<div class="col-md-4">
+    <div class="card h-100">
+      <img src="{{ cloth.imagepath.url }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ cloth.name }}</h5>
+        <h6 class="card-title">Brand: {{ cloth.brand }} Size: {{ cloth.size }}</h6>
+        <strong>Rs. {{ cloth.price }}</strong>
+        <p class="card-text">{{ cloth.details }}</p>
+        <a href="/details/{{cloth.id}}" class="btn btn-primary">Details</a>
+        <a href="/addtocart/{{cloth.id}}" class="btn btn-primary">Add to Cart</a>
+
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+{% endblock 'main' %}

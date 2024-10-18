@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoShop</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}">
+<!-- <style>
+  div{
+    border: solid;
+  }
+</style> -->
+
+</head>
+<body>
+  <div class="container-fluid">
+  <div>
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="title1 navbar-brand" href="#">GoShop</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Account
+                    </a>
+                    <ul class="dropdown-menu" style="background-color: white; border: solid;" >
+                      <li><a class="dropdown-item" href="login.html">Login</a></li>
+                      <li><a class="dropdown-item" href="register.html">Register</a></li>
+                    </ul>
+                  </li>
+                </ul>
+               <ul class="navbar-nav me-3 mb-2 mb-lg-0"> 
+                <li class="nav-item">
+                  <a class="nav-link" href="cart.html"><i class="bi-cart"></i> My Cart </a>
+                </li>&nbsp;&nbsp;&nbsp;
+                <li class="nav-item"></li>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search site" aria-label="Search" style="background-color: white;">
+                  <button class="btn btn btn-primary" type="submit">Search</button>
+                </form>
+               </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+  <!-- End of header -->
+   
+        <div class="myrow2 row  mt-2">
+
+          <div class="box col-3 bg-light mt-2" style="height: fit-content;">
+            <ul>
+                <li><p class="sidebar1">Categories Available</p>
+                </li>
+                <hr style="color: rgb(17, 163, 114);">
+                <li><a href="" class="a1"><u>All</u></a><br>
+                </li>
+                <li><a href="" class="a1"><u>Men</u></a><br>
+                </li>
+                <li><a href="" class="a1"><u>Women</u></a><br>
+                </li>
+                <li><a href="" class="a1"><u>Kids</u></a><br>
+                </li>
+
+                <li><p class="sidebar1">Filter by Price</p>
+                </li>
+                <hr style="border-top: 2px solid rgb(17, 163, 114);">
+                <li>Min.<input class="form-control form-control-sm" type="text" placeholder="0-99999" aria-label=".form-control-sm example"><br>
+                </li>
+                <li>Max.<input class="form-control form-control-sm" type="text" placeholder="0-99999" aria-label=".form-control-sm example"><br>
+                </li>
+
+                <li><p class="sidebar1">Sort by Price</p>
+                </li>
+                <hr style="border-top: 2px solid rgb(17, 163, 114);">
+                <li><a href="" class="a1"><u>Low to High</u></a><br>
+                </li>
+                <li><a href="" class="a1"><u>High to Low</u></a><br>
+                </li>
+            </ul>
+
+
+          </div>
+
+          <div class="col-9 col-sm-12 col-md-8 col-lg-8 align-items-center">
+            <div class="card text-center mt-2">
+              <div class="card-header">
+                Featured Banner
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Limited Time Special Offer !!!</h5>
+                <p class="card-text">This special offer is only for limited period of time. Check it out...</p>
+                <a href="banneroffer.html" class="btn btn-primary">More</a>
+              </div>
+              <div class="card-footer text-body-secondary">
+                Offer Ends in 2 days
+              </div>
+            </div>
+            <div class="col-9 m-5" style="width: fit-content">
+              <div class="row row-cols-1 row-cols-md-4 g-4 ">
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="{% static 'images/men0.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <a href="details.html" class="btn btn-primary">Details</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="{% static 'images/men1.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <a href="details.html" class="btn btn-primary">Details</a>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+            </div>
+          </div>
+       
+        </div>
+       
+        <div class="myrow3 row">
+          <div class="box col-4">
+            Location: 
+             <i class="bi bi-geo-alt-fill" style="font-size:20px; "></i><br>
+             2nd floor, Ishan Arcade, 1, Gokhale Rd, opposite Gaondevi Mandir, above Canara Bank, Shivaji Path, Dada Patil Wadi, Naupada, Thane West, Thane, Maharashtra 400602 
+          </div>
+          <div class="box col-4">
+             Contact Us: <br>
+             <i class="bi bi-telephone-fill" style="font-size:20px; "></i> 9123456789 <br>
+             <i class="bi bi-envelope-fill" style="font-size:20px; "></i> officeHR@companyname.com
+          </div>
+          <div class="box col-4">
+             <a href=""><i class="bi bi-linkedin" style="font-size:20px; "></i></a><br>
+             <a href=""><i class="bi bi-twitter" style="font-size:20px; "></i></a><br>
+             <a href=""><i class="bi bi-whatsapp" style="font-size:20px; "></i></a><br>
+          </div>
+       </div>
+
+            
+        </div>
+
+
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

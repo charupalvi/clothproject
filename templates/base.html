@@ -1,0 +1,22 @@
+{% load static %}
+{% include 'header.html' %}
+
+<div class="myrow2 row  mt-2">    <!-- myrow2 starts here -->
+
+    {% include 'sidebar.html' %}   <!-- including sidebar (column1 in second row) -->
+
+    <div class="col-9">  <!-- second column of second row -->
+     <!-- {% include 'banner.html' %} -->
+      <div class="col-9 m-5">
+        <div class="row">
+            {% block 'main' %}
+              <!-- main content (page specific content) should be placed here -->
+            {% endblock 'main' %}
+        </div>
+
+      </div>
+    </div>   <!--  closing second column -->
+ 
+  </div>       <!-- myrow2 ends here -->
+
+{% include 'footer.html' %}

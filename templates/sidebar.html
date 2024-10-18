@@ -1,0 +1,38 @@
+<div class="box col-3 bg-light mt-2" style="height: fit-content;">
+    <ul>
+        <li><p class="sidebar1">Categories Available</p>
+        </li>
+        <hr style="color: rgb(17, 163, 114);">
+        <li><a href="/" class="a1"><u>All</u></a><br>
+        </li>
+        <li>
+            {% for d in types %}
+            <a href="searchcat/{{d.category}}" class="a1"><u>{{ d.category }}</u></a><br>
+            {% endfor %}
+        </li>
+        <!-- <li><a href="" class="a1"><u>Women</u></a><br>
+        </li>
+        <li><a href="" class="a1"><u>Kids</u></a><br>
+        </li> -->
+
+        <li><p class="sidebar1">Filter by Price</p>
+        </li>
+        <hr style="border-top: 2px solid rgb(17, 163, 114);">
+        <form action="/searchbyprice">
+        <li>Min.<input class="form-control form-control-sm" type="text" placeholder="0-99999" aria-label=".form-control-sm example" name="min"><br>
+        </li>
+        <li>Max.<input class="form-control form-control-sm" type="text" placeholder="0-99999" aria-label=".form-control-sm example" name="max"><br>
+        </li>
+        <input type="submit" value="Search" >
+        </form>
+        <li><p class="sidebar1">Sort by Price</p>
+        </li>
+        <hr style="border-top: 2px solid rgb(17, 163, 114);">
+        <li><a href="/sort/0" class="a1"><u>Low to High</u></a><br>
+        </li>
+        <li><a href="/sort/1" class="a1"><u>High to Low</u></a><br>
+        </li>
+    </ul>
+
+
+  </div>

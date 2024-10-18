@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'main' %}
+<div class="  row mt-2">
+    <div class="col-6  ">
+       <img src="{{ cloth.imagepath.url }}" height="300px" width="100%"  alt="">
+    </div>
+    <div class="col-6">
+       <div class="card" style="width: 100%;">
+          <div class="card-body">
+            <h4 class="card-title">{{ cloth.name }}</h4>
+            <h6>{{cloth.category}}</h6>
+            <p class="card-text">{{ cloth.details }}</p>
+            <strong>Rs. {{cloth.price}}</strong><br>
+            <a href="/addtocart/{{cloth.id}}" class="btn btn-warning">Add To cart</a>
+            <a href="/" class="btn btn-primary">Back</a>
+          </div>
+        </div>
+
+    </div>
+ </div>
+{% endblock 'main' %}

@@ -1,0 +1,53 @@
+{% extends 'no_sidebar_base.html' %}
+{% load static %}
+
+{% block 'main' %}
+
+
+<div class="box col-7">
+
+{% for msg in messages %}
+<div>
+  {% if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+  <div class="alert alert-warning" role="alert">
+    {{msg}}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
+
+    <u><h3 class="bg-light rounded-3">Products:</h3></u>
+    {% for cart in cartlist %}
+    <div class="row m-2" >
+       <div class="col-6">
+          <img src="{{ cart.clothid.imagepath.url }}" alt="" width="100%" height="200px">
+       </div>
+       <div class="col-5">
+          <h3>{{ cart.clothid.name }}</h3>
+          
+          <strong>Rs.{{ cart.clothid.price }}</strong><br>
+          Quantity: 
+          {% if cart.quantity > 1 %}
+          <a class="btn btn-secondary" href="/updatecount/{{cart.id}}/decr">-</a>
+          {% endif %}
+          <strong>{{ cart.quantity }}</strong>
+          <!-- <input type="text" name="" value="{{ cart.quantity }}" style="width: 42px;"> -->
+          <a class="btn btn-secondary" href="/updatecount/{{cart.id}}/incr">+</a>
+          <br>
+          <a class="btn btn-danger" href="/removecart/{{ cart.id }}">Remove</a>
+       </div>
+       
+    </div>
+    {% endfor %}
+ </div>
+ <div class="box col-4">
+    <u><h3 class=" bg-light rounded-3" >Summary:</h3></u>
+       <h4>Items Count: {{count}}</h4>
+       <h4>Total Amount: Rs. {{total}}</h4>
+       <br>
+       <a class="btn btn-warning" href="confirmorder">Confirm Order</a>
+       <a class="btn btn-primary" href="/">Shop More</a>
+    </h3>
+ </div>
+
+{% endblock 'main' %}
